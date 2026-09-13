@@ -1,0 +1,12 @@
+# Install PyTorch for your CUDA/ROCm device first; see README.md.
+transformers==4.49.0
+accelerate==1.4.0
+peft==0.15.1
+datasets==3.3.2
+huggingface_hub==0.36.0
+numpy>=1.26,<2
+safetensors>=0.4.3
+sentencepiece>=0.2.0
+einops>=0.8
+tqdm>=4.66
+PyYAML>=6.0

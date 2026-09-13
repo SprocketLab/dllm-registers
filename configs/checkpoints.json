@@ -1,0 +1,170 @@
+{
+  "dream-code-discrete": {
+    "repo_id": "albertge/dream-7b-dllm-registers-code64-codetags-t4",
+    "revision": "0b006feaaf8f503e5e25c62deb60a02191230ac9",
+    "channel": "discrete",
+    "slots": 4,
+    "task": "code",
+    "chunk_size": 64,
+    "max_chunks": 16,
+    "dtype": "bfloat16",
+    "code_revision": "6572adb5535263e4d1a337b56942ba48b6dee2a9"
+  },
+  "dream-code-memory": {
+    "repo_id": "albertge/dream-7b-dllm-memory-tokens-code64-codetags-recon-w005",
+    "revision": "a523023741e4a38bc0a41c30fdb707320fca6ba1",
+    "channel": "memory",
+    "slots": 4,
+    "task": "code",
+    "chunk_size": 64,
+    "max_chunks": 16,
+    "dtype": "bfloat16",
+    "code_revision": "6572adb5535263e4d1a337b56942ba48b6dee2a9"
+  },
+  "dream-code-registers": {
+    "repo_id": "albertge/dream-7b-dllm-registers-code64-codetags-r4",
+    "revision": "12b735b8cb9d180450c696e921780d5975c1b2c1",
+    "channel": "registers",
+    "slots": 4,
+    "task": "code",
+    "chunk_size": 64,
+    "max_chunks": 16,
+    "dtype": "bfloat16",
+    "code_revision": "6572adb5535263e4d1a337b56942ba48b6dee2a9"
+  },
+  "dream-code-sft": {
+    "repo_id": "albertge/dream-7b-full-sft-mix60k-code-codetags",
+    "revision": "169b79f80da11d570b263c6ad9b4f6e17849acf6",
+    "channel": "none",
+    "slots": 0,
+    "task": "code",
+    "chunk_size": 64,
+    "max_chunks": 16,
+    "dtype": "bfloat16",
+    "code_revision": "169b79f80da11d570b263c6ad9b4f6e17849acf6"
+  },
+  "dream-math-discrete": {
+    "repo_id": "albertge/dream-7b-dllm-registers-mix60k-t4",
+    "revision": "ffe466ee6f12cfc433d8b80dbf626d87ed16cb7c",
+    "channel": "discrete",
+    "slots": 4,
+    "task": "math",
+    "chunk_size": 128,
+    "max_chunks": 8,
+    "dtype": "float16",
+    "code_revision": "6572adb5535263e4d1a337b56942ba48b6dee2a9"
+  },
+  "dream-math-memory": {
+    "repo_id": "albertge/dream-7b-dllm-memory-tokens-mix60k-recon-w005",
+    "revision": "891482d74b1697cc52de92981dfafcc9c0522400",
+    "channel": "memory",
+    "slots": 4,
+    "task": "math",
+    "chunk_size": 128,
+    "max_chunks": 8,
+    "dtype": "float16",
+    "code_revision": "6572adb5535263e4d1a337b56942ba48b6dee2a9"
+  },
+  "dream-math-registers": {
+    "repo_id": "albertge/dream-7b-dllm-registers-mix60k-r4",
+    "revision": "ea9a9f9ed08e7c3588b8ba9ad60f464542950741",
+    "channel": "registers",
+    "slots": 4,
+    "task": "math",
+    "chunk_size": 128,
+    "max_chunks": 8,
+    "dtype": "float16",
+    "code_revision": "6572adb5535263e4d1a337b56942ba48b6dee2a9"
+  },
+  "dream-math-sft": {
+    "repo_id": "albertge/dream-7b-full-sft-mix60k-4pass",
+    "revision": "815b0de5de23051b6d0a675524b33d2142acf869",
+    "channel": "none",
+    "slots": 0,
+    "task": "math",
+    "chunk_size": 128,
+    "max_chunks": 8,
+    "dtype": "float16",
+    "code_revision": "815b0de5de23051b6d0a675524b33d2142acf869"
+  },
+  "llada-code-discrete": {
+    "repo_id": "albertge/llada-8b-dllm-registers-code64-codetags-t4",
+    "revision": "cc3c588ee4ba18c0fdc6fa245b4bfeb5b984f3f5",
+    "channel": "discrete",
+    "slots": 4,
+    "task": "code",
+    "chunk_size": 64,
+    "max_chunks": 16,
+    "dtype": "bfloat16"
+  },
+  "llada-code-memory": {
+    "repo_id": "albertge/llada-8b-dllm-memory-tokens-code64-codetags-recon-w005",
+    "revision": "03f2d5403ee333985d9b2c470056de64793fc461",
+    "channel": "memory",
+    "slots": 4,
+    "task": "code",
+    "chunk_size": 64,
+    "max_chunks": 16,
+    "dtype": "bfloat16"
+  },
+  "llada-code-registers": {
+    "repo_id": "albertge/llada-8b-dllm-registers-code64-codetags-r4",
+    "revision": "d8ca24389fb5021fb336e8ed1b317e68704c0e28",
+    "channel": "registers",
+    "slots": 4,
+    "task": "code",
+    "chunk_size": 64,
+    "max_chunks": 16,
+    "dtype": "bfloat16"
+  },
+  "llada-code-sft": {
+    "repo_id": "albertge/llada-8b-full-sft-mix60k-code-codetags",
+    "revision": "9bea89bafa37ac92aab8f7c9297fe6c3812e26c6",
+    "channel": "none",
+    "slots": 0,
+    "task": "code",
+    "chunk_size": 64,
+    "max_chunks": 16,
+    "dtype": "bfloat16"
+  },
+  "llada-math-discrete": {
+    "repo_id": "albertge/llada-8b-dllm-registers-mix60k-t4",
+    "revision": "6ef8b59b543bb549b0c2d1bc4e54f76ca0132f26",
+    "channel": "discrete",
+    "slots": 4,
+    "task": "math",
+    "chunk_size": 128,
+    "max_chunks": 8,
+    "dtype": "bfloat16"
+  },
+  "llada-math-memory": {
+    "repo_id": "albertge/llada-8b-dllm-memory-tokens-mix60k-recon-w005",
+    "revision": "d63560c8154fca370696946a10e30f02c9acdc8c",
+    "channel": "memory",
+    "slots": 4,
+    "task": "math",
+    "chunk_size": 128,
+    "max_chunks": 8,
+    "dtype": "bfloat16"
+  },
+  "llada-math-registers": {
+    "repo_id": "albertge/llada-8b-dllm-registers-mix60k-r4-corrected",
+    "revision": "156d697e427c1ada9e65dec1d21df1770f4afd95",
+    "channel": "registers",
+    "slots": 4,
+    "task": "math",
+    "chunk_size": 128,
+    "max_chunks": 8,
+    "dtype": "bfloat16"
+  },
+  "llada-math-sft": {
+    "repo_id": "albertge/llada-8b-full-sft-mix60k-4pass",
+    "revision": "cde9b4691fcfb81dbdbacc8c637ca2ff42e2c1d1",
+    "channel": "none",
+    "slots": 0,
+    "task": "math",
+    "chunk_size": 128,
+    "max_chunks": 8,
+    "dtype": "bfloat16"
+  }
+}
