@@ -1,10 +1,34 @@
-# Register Tokens for Bounded-State Reasoning in Diffusion Language Models
+<div align="center">
+  <h1>Register Tokens for Bounded-State Reasoning in Diffusion Language Models</h1>
+  <p>
+    A trained, fixed-size <i>continuous</i> channel for carrying decoding state across context resets in diffusion LLMs.
+  </p>
+</div>
 
-Code for running, training, and evaluating continuous register tokens in LLaDA and Dream.
+<div align="center">
 
-The model keeps the original prompt and generates one fixed-size completion window at a time. At a boundary, it reads a small set of register hidden states, clears the generated text from the active context, and injects those states into the next window. The completed chunks are concatenated for the final output; they do not become a growing input prefix.
+  <a href="https://github.com/lbertge/dllm-registers-reasoning"><img src="https://img.shields.io/badge/code-github-181717?logo=github" alt="Code on GitHub"></a>
+  <a href="https://huggingface.co/albertge"><img src="https://img.shields.io/badge/checkpoints-huggingface-FFD21F?logo=huggingface" alt="Checkpoints on Hugging Face"></a>
+  <a href="https://huggingface.co/datasets/albertge/mix60k-math-code-sft"><img src="https://img.shields.io/badge/dataset-huggingface-FFD21F?logo=huggingface" alt="Training dataset on Hugging Face"></a>
+</div>
 
-This release includes the main supervised-fine-tuning recipes, 16 checkpoint aliases, and six math/code benchmarks. Start with a trained checkpoint; training is not required to try the method.
+## What this is
+
+Diffusion language models decode in **denoising windows**. We study whether they can continue a multi-block generation after each completed text block is cleared, using only a fixed-size carried state.
+
+**Register tokens** are a small, fixed set of positions whose hidden states the model is trained to *write* during one chunk and *read* during the next. Between chunks we clear the generated text from the active context but preserve the original prompt and registers, so successive chunks communicate through a bounded continuous channel rather than through a growing prefix. The completed chunks are concatenated for the final output.
+
+<p align="center">
+  <a href="registers_demo.mp4">
+    <img src="media/registers_demo.gif" alt="Register inference: denoise a fixed-size completion window, write the register state, clear the generated text, and continue with the same prompt and carried state." width="960">
+  </a>
+</p>
+
+<p align="center">
+  <a href="registers_demo.mp4">Watch the full-quality demo (MP4)</a>
+</p>
+
+This release includes inference examples for LLaDA and Dream, the main supervised-fine-tuning recipes, 16 checkpoint aliases, and six math/code benchmarks. Start with a trained checkpoint; training is not required to try the method.
 
 ## Setup
 
@@ -61,10 +85,10 @@ Aliases select an immutable checkpoint revision and its carry layout, window siz
 
 | Training method | LLaDA math | Dream math |
 | --- | --- | --- |
-| Task-trained registers | `llada-math-registers` | `dream-math-registers` |
-| Discrete text | `llada-math-discrete` | `dream-math-discrete` |
-| Reconstruction-trained memory | `llada-math-memory` | `dream-math-memory` |
-| Full-sequence SFT, no carry | `llada-math-sft` | `dream-math-sft` |
+| Task-trained registers | [llada-math-registers](https://huggingface.co/albertge/llada-8b-dllm-registers-mix60k-r4-corrected) | [dream-math-registers](https://huggingface.co/albertge/dream-7b-dllm-registers-mix60k-r4) |
+| Discrete text | [llada-math-discrete](https://huggingface.co/albertge/llada-8b-dllm-registers-mix60k-t4) | [dream-math-discrete](https://huggingface.co/albertge/dream-7b-dllm-registers-mix60k-t4) |
+| Reconstruction-trained memory | [llada-math-memory](https://huggingface.co/albertge/llada-8b-dllm-memory-tokens-mix60k-recon-w005) | [dream-math-memory](https://huggingface.co/albertge/dream-7b-dllm-memory-tokens-mix60k-recon-w005) |
+| Full-sequence SFT, no carry | [llada-math-sft](https://huggingface.co/albertge/llada-8b-full-sft-mix60k-4pass) | [dream-math-sft](https://huggingface.co/albertge/dream-7b-full-sft-mix60k-4pass) |
 
 Replace `math` with `code` for each method's code-continuation checkpoint. Math aliases use C=128 and up to 8 chunks; code aliases use C=64 and up to 16. Registers, memory, and discrete text each have four carry slots. Memory and registers share the inference algorithm; their training objectives differ.
 
