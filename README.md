@@ -8,7 +8,7 @@
 <div align="center">
 
   <a href="https://github.com/lbertge/dllm-registers-reasoning"><img src="https://img.shields.io/badge/code-github-181717?logo=github" alt="Code on GitHub"></a>
-  <a href="https://huggingface.co/albertge"><img src="https://img.shields.io/badge/checkpoints-huggingface-FFD21F?logo=huggingface" alt="Checkpoints on Hugging Face"></a>
+  <a href="https://huggingface.co/collections/albertge/dllm-registers-6a2e409ed8c60039981a229c"><img src="https://img.shields.io/badge/checkpoints-huggingface-FFD21F?logo=huggingface" alt="Checkpoints on Hugging Face"></a>
   <a href="https://huggingface.co/datasets/albertge/mix60k-math-code-sft"><img src="https://img.shields.io/badge/dataset-huggingface-FFD21F?logo=huggingface" alt="Training dataset on Hugging Face"></a>
 </div>
 
